@@ -36,6 +36,10 @@
 extern int lge_get_mfts_mode(void);
 #endif
 
+#ifdef CONFIG_KLAPSE
+#include "../sde/klapse.h"
+#endif
+
 /**
  * topology is currently defined by a set of following 3 values:
  * 1. num of layer mixers
