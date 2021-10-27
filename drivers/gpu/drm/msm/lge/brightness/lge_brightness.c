@@ -31,6 +31,10 @@ extern int lge_backlight_device_update_status(struct backlight_device *bd);
 extern bool is_ds2_connected(void);
 #endif
 
+#ifdef CONFIG_KLAPSE
+#include <linux/klapse.h>
+#endif
+
 extern int lge_ddic_dsi_panel_tx_cmd_set(struct dsi_panel *panel,
 				enum lge_ddic_dsi_cmd_set_type type);
 extern char* get_payload_addr(struct dsi_panel *panel, enum lge_ddic_dsi_cmd_set_type type, int position);
@@ -287,6 +291,10 @@ int lge_backlight_device_update_status(struct backlight_device *bd)
 		if (!bl_lvl && brightness)
 			bl_lvl = 1;
 	}
+
+#ifdef CONFIG_KLAPSE
+	set_rgb_slider(bl_lvl);
+#endif
 
 	mutex_lock(&display->display_lock);
 	if (panel->lge.allow_bl_update) { //TODO : Discuss condition state.
