@@ -337,7 +337,9 @@ static unsigned int populate_node(const void *blob,
 			fpsize += l;
 			allocl = fpsize;
 		}
-	}
+	} else {
+		 fpsize += allocl;
+		}
 
 	np = unflatten_dt_alloc(mem, sizeof(struct device_node) + allocl,
 				__alignof__(struct device_node));

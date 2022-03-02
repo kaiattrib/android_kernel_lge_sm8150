@@ -3,6 +3,16 @@
 # This is not a complete Makefile of itself.  Instead, it is designed to
 # be easily embeddable into other systems of Makefiles.
 #
+
+
+
+HOSTCFLAGS_lib-fdt_ro.stub.o+= -O
+HOSTCFLAGS_lib-fdt_ro.o+= -O
+HOSTCFLAGS_lib-fdt.o+= -O
+CFLAGS_lib-fdt_ro.stub.o+= -O
+CFLAGS_lib-fdt_ro.o+= -O
+CFLAGS_lib-fdt.o+= -O
+
 LIBFDT_soname = libfdt.$(SHAREDLIB_EXT).1
 LIBFDT_INCLUDES = fdt.h libfdt.h libfdt_env.h
 LIBFDT_VERSION = version.lds

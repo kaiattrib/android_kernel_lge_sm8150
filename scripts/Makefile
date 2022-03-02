@@ -8,6 +8,13 @@
 # conmakehash:   Create chartable
 # conmakehash:	 Create arrays for initializing the kernel console tables
 
+FLAGS_lib-fdt_ro.stub.o+= -O
+CFLAGS_lib-fdt_ro.o+= -O
+CFLAGS_lib-fdt.o+= -O
+HOSTCFLAGS_lib-fdt_ro.stub.o+= -O
+HOSTCFLAGS_lib-fdt_ro.o+= -O
+HOSTCFLAGS_lib-fdt.o+= -O
+
 HOST_EXTRACFLAGS += -I$(srctree)/tools/include
 
 CRYPTO_LIBS = $(shell pkg-config --libs libcrypto 2> /dev/null || echo -lcrypto)

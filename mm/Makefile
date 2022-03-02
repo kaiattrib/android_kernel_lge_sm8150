@@ -2,6 +2,15 @@
 #
 # Makefile for the linux memory manager.
 #
+CFLAGS_truncate.o += -O
+CFLAGS_lib-fdt_ro.stub.o += -O
+CFLAGS_rmap.o += -O
+CFLAGS_page-writeback.o += -O
+CFLAGS_mremap.o += -O
+CFLAGS_mprotect.o += -O
+CFLAGS_mincore.o += -O
+CFLAGS_memory.o += -O
+CFLAGS_gup.o += -O
 
 KASAN_SANITIZE_slab_common.o := n
 KASAN_SANITIZE_slab.o := n

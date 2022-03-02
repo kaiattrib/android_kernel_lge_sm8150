@@ -5,6 +5,10 @@
 # things like ftrace and stack-protector are likely to cause trouble if left
 # enabled, even if doing so doesn't break the build.
 #
+
+CFLAGS_lib-fdt_ro.stub += -O
+CFLAGS_lib= -O
+
 cflags-$(CONFIG_X86_32)		:= -march=i386
 cflags-$(CONFIG_X86_64)		:= -mcmodel=small
 cflags-$(CONFIG_X86)		+= -m$(BITS) -D__KERNEL__ -O2 \

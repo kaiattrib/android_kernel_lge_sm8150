@@ -1,6 +1,15 @@
 # SPDX-License-Identifier: GPL-2.0
 # scripts/dtc makefile
 
+
+
+HOSTCFLAGS_lib-fdt_ro.stub.o+= -O
+HOSTCFLAGS_lib-fdt_ro.o+= -O
+HOSTCFLAGS_lib-fdt.o+= -O
+CFLAGS_lib-fdt_ro.stub.o+= -O
+CFLAGS_lib-fdt_ro.o+= -O
+CFLAGS_lib-fdt.o+= -O
+
 hostprogs-y	:= dtc
 ifeq ($(DTC_EXT),)
 always		:= $(hostprogs-y)

@@ -250,7 +250,15 @@ const char *fdt_get_name(const void *fdt, int nodeoffset, int *len)
 		 * contents are loosely checked.
 		 */
 		const char *leaf;
-		leaf = strrchr(nameptr, '/');
+		leaf =NULL;
+		int tlen = strlen(nameptr);
+		int i = tlen;	
+		for(i=tlen-1;i>=0;i--){
+		    if(nameptr[i]=='/'){
+		    leaf = i;
+		    break;
+		    }
+		}	
 		if (leaf == NULL) {
 			err = -FDT_ERR_BADSTRUCTURE;
 			goto fail;
